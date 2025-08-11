@@ -1,0 +1,27 @@
+:root {
+  --primary: #008080; /* teal */
+  --primary-hover: #006666; /* darker teal for hover */
+  --bg: #f8f9fa;
+  --text: #222;
+  --font: 'Poppins', sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
