@@ -1,13 +1,51 @@
+/* Hide mobile/desktop theme toggle in appropriate view */
+@media (max-width: 768px) {
+  .navbar-actions .theme-toggle-desktop {
+    display: none !important;
+  }
+  .navbar-menu .theme-toggle-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto 0 auto;
+    width: 40px;
+    height: 50px;
+    padding: 5px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    box-shadow: none;
+  }
+}
+@media (min-width: 769px) {
+  .navbar-menu .theme-toggle-mobile {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-actions .theme-toggle {
+    display: none !important;
+  }
+}
+/* Hide elements on sidebar open (mobile) */
+@media (max-width: 768px) {
+  .hide-on-sidebar {
+    display: none !important;
+  }
+}
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw; /* full width */
-  background: white;
+  background: var(--white);
   box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
   z-index: 1000;
   padding: 10px 0;
   margin: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* Because navbar is fixed, content below might go under it, add padding-top in your main container */
@@ -36,7 +74,27 @@ body {
 
 .navbar-menu {
   display: flex;
-  gap: 20px;
+  gap: 1.5rem;
+}
+
+/* Overlay when menu is open */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 5;
+}
+
+.navbar-menu.active {
+  position: fixed;
+  right: 0;
+  top: 4;
+  height: 100%;
+  width: 250px;
+  background: var(--background-color);
+  z-index: 10;
+  transition: transform 0.3s ease;
 }
 
 .nav-link {
@@ -75,26 +133,20 @@ body {
 /* Responsive (mobile) */
 @media (max-width: 768px) {
   .navbar-menu {
-    position: fixed;
+    position: absolute;
     top: 60px;
     right: 0;
-    background: white;
-    height: calc(100vh - 60px);
-    width: 200px;
     flex-direction: column;
-    padding: 20px;
-    box-shadow: -2px 0 8px rgb(0 0 0 / 0.1);
+    gap: 1rem;
+    background: var(--navbar-bg);
+    padding: 1rem;
+    width: 200px;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
   }
 
   .navbar-menu.active {
     transform: translateX(0);
-  }
-
-  .nav-link {
-    padding: 15px 0;
-    font-size: 1.2rem;
   }
 
   .navbar-toggle {

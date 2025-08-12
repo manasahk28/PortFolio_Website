@@ -1,16 +1,17 @@
 .footer {
-  background: white;
-  border-top: 1px solid #ddd;
+  background: var(--white);
+  border-top: 1px solid var(--border);
   padding: 20px 0;
-  width: 100vw;
   color: var(--text);
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .footer-container {
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 20px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;

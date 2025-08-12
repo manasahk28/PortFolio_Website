@@ -7,10 +7,10 @@ export default function Footer() {
       <div className="footer-container">
         <p>© {new Date().getFullYear()} Manasa H K. All rights reserved.</p>
         <div className="footer-socials">
-          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/manasa-h-k-a80a22294" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a href="https://github.com/manasahk28" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub />
           </a>
         </div>
